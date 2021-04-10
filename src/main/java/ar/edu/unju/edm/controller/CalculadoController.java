@@ -28,7 +28,7 @@ public class CalculadoController {
 		unaCalculadora.setNum1(Integer.valueOf(num1));
 		unaCalculadora.setNum2(num2);
 
-		int resultadoSuma = unaCalculadora.sumar();
+		float resultadoSuma = unaCalculadora.sumar();
 
 		ModelAndView modelView = new ModelAndView("resultado");
 		modelView.addObject("resultadoSuma", resultadoSuma);
@@ -37,13 +37,13 @@ public class CalculadoController {
 	}
 	
 	@GetMapping("/calculoResta")
-	//contenedor vamos a buscar un parametro y lo vamos a tomar como string=?des de la visa podemos pasar de 
+	
 	public ModelAndView getRestaPage(@RequestParam(name = "num1") String num1 , @RequestParam(name = "num2") int num2) {
 
 		unaCalculadora.setNum1(Integer.valueOf(num1));
 		unaCalculadora.setNum2(num2);
 
-		int resultado = unaCalculadora.resta();
+		float resultado = unaCalculadora.resta();
 
 		ModelAndView modelView = new ModelAndView("resultado");
 		modelView.addObject("resultado", resultado);
@@ -52,13 +52,13 @@ public class CalculadoController {
 	}
 	
 	@GetMapping("/calculoProducto")
-	//contenedor vamos a buscar un parametro y lo vamos a tomar como string=?des de la visa podemos pasar de 
+	
 	public ModelAndView getProductoPage(@RequestParam(name = "num1") int num1 , @RequestParam(name = "num2") int num2) {
 
 		unaCalculadora.setNum1(num1);
 		unaCalculadora.setNum2(num2);
 
-	int resultadoProducto = unaCalculadora.multiplicar();
+	float resultadoProducto = unaCalculadora.multiplicar();
 
 	ModelAndView modelView = new ModelAndView("resultado");
 		modelView.addObject("resultadoProducto", resultadoProducto );
@@ -67,13 +67,13 @@ public class CalculadoController {
 	}
 	
 	@GetMapping("/calculoDivision")
-	//contenedor vamos a buscar un parametro y lo vamos a tomar como string=?des de la visa podemos pasar de 
-	public ModelAndView getDivisionPage(@RequestParam(name = "num1") int num1 , @RequestParam(name = "num2") int num2) {
+	
+	public ModelAndView getDivisionPage(@RequestParam(name = "num1") String num1 , @RequestParam(name = "num2") int num2) {
 
-		unaCalculadora.setNum1(num1);
-		unaCalculadora.setNum2(num2);
+		unaCalculadora.setNum1(Integer.valueOf(num1));
+		unaCalculadora.setNum2(Integer.valueOf(num2));
 
-		int resultadoDivision = unaCalculadora.division();
+		float resultadoDivision = unaCalculadora.division();
 
 		ModelAndView modelView = new ModelAndView("resultado");
 		modelView.addObject("resultadoDivision", resultadoDivision);

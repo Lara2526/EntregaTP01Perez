@@ -2,7 +2,7 @@ package ar.edu.unju.edm.model;
 
 import org.springframework.stereotype.Component;
 
-//esteorotipo definido como un componente de lo cual no tengo que hacer new en el controler
+
 @Component
 
 public class Provincia {

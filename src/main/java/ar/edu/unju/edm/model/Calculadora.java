@@ -5,58 +5,54 @@ import org.springframework.stereotype.Component;
 @Component
 public class Calculadora {
 	
-		private int num1;
-		private int num2; 
+		private float num1;
+		private float num2; 
 		
 		public Calculadora() {
 			// TODO Auto-generated constructor stub
 		}
 
-		public int sumar() {
+		public float sumar() {
 			return num1 + num2;
 		}
-		public int resta() {
+		public float resta() {
 			
 			return  num1 - num2;
 		}
 
-		public int multiplicar() {
+		public float multiplicar() {
 			
 				return num1*num2;
 		}
-		public int division() {
-				
-			return num1/num2;
+		public float division(){
+			
+			if(num2!=0 && num1!=0)
+				return num1/num2;
+			else
+				return 0;
+			
 		}
-		public int getNum1() {
+		public float getNum1() {
 			return num1;
 		}
 
-		public void setNum1(int num1) {
+		public void setNum1(float num1) {
 			this.num1 = num1;
 		}
 
-		public int getNum2() {
+		public float getNum2() {
 			return num2;
 		}
 
-		public void setNum2(int num2) {
+		public void setNum2(float num2) {
 			this.num2 = num2;
-		}
-
-		@Override
-		public String toString() {
-			return "Calculadora [num1=" + num1 + ", num2=" + num2 + ", getNum1()=" + getNum1() + ", getNum2()="
-					+ getNum2() + ", sumar()=" + sumar() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
-					+ ", toString()=" + super.toString() + "]";
 		}
 
 		
 
-	//	public void setNum1(Double valueOf) {
-			// TODO Auto-generated method stub
-			
-	//	}
+		
+
+	
 
 		
 
